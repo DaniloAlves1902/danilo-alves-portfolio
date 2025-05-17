@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danilo Alves | Desenvolvedor Full-Stack</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+      <div class="container header-container">
+        <a href="#header" class="logo">DA</a>
+        <button class="hamburger" id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="nav">
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="overlay" id="overlay"></div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-greeting fade-up">Olá, meu nome é</p>
+          <h1 class="hero-title fade-up">Danilo Alves.</h1>
+          <h2 class="hero-subtitle fade-up">Desenvolvedor FullStack.</h2>
+          <p class="hero-description fade-up">
+            Especializado em criar aplicações web de alta qualidade, utilizando
+            tecnologias como Java, Node.js, React e muito mais. Transformando
+            ideias em produtos excepcionais.
+          </p>
+          <a href="#projetos" class="cta-button fade-up"
+            >Conheça meu trabalho</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Sobre mim</h2>
+        <div class="about-content">
+          <div class="about-text" data-aos="fade-up">
+            <p>
+              Olá! Sou Danilo, um desenvolvedor fullstack apaixonado por criar
+              soluções tecnológicas eficientes e visualmente atraentes. Minha
+              jornada na programação começou há alguns anos e desde então venho
+              aprimorando minhas habilidades para entregar produtos de
+              qualidade.
+            </p>
+            <p>
+              Trabalho com uma variedade de tecnologias, mas meu foco principal
+              está em <strong>Java</strong>, <strong>Node.js</strong>,
+              <strong>React</strong> e todo o ecossistema ao redor dessas
+              ferramentas. Essa combinação me permite desenvolver aplicações
+              robustas, escaláveis e com excelente experiência de usuário.
+            </p>
+            <p>
+              Tenho orgulho de ter desenvolvido projetos como
+              <strong>Startink</strong> e <strong>TrêsD Online</strong>, que
+              demonstram minha capacidade de criar soluções completas, do
+              backend ao frontend.
+            </p>
+            <p>Algumas tecnologias com as quais trabalho atualmente:</p>
+            <ul class="skills-list">
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>React</li>
+              <li>JavaScript</li>
+              <li>HTML & CSS</li>
+              <li>SQL & NoSQL</li>
+            </ul>
+          </div>
+          <div class="profile-container" data-aos="fade-up">
+            <img
+              class="profile-img"
+              src="/img/minha foto.jpg"
+              alt="Danilo Alves"
+            />
+            <div class="profile-border"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
+
+        <!-- Featured Projects -->
+        <div class="featured-projects">
+          <div class="featured-project" data-aos="fade-up">
+            <div class="featured-img-container right">
+              <img
+                class="featured-img"
+                src="/img/tresdPrevia.png"
+                alt="Projeto tresd-online"
+              />
+            </div>
+            <div class="featured-content left">
+              <p class="featured-label">Projeto em Destaque</p>
+              <h3 class="featured-title">TrêsD Online</h3>
+              <div class="featured-description">
+                <p>
+                  Site de empresa especializada em produtos de
+                  impressão 3D, comunicação visual e industria.
+                </p>
+              </div>
+              <ul class="featured-tech">
+                <li>React</li>
+                <li>Bootstrap</li>
+                <li>Express</li>
+                <li>MySQL</li>
+              </ul>
+              <div class="featured-links">
+                <a
+                  href="https://tresdonline.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Live Demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-project" data-aos="fade-up">
+            <div class="featured-img-container">
+              <img
+                class="featured-img"
+                src="/img/startink.png"
+                alt="Projeto Startink"
+              />
+            </div>
+            <div class="featured-content">
+              <p class="featured-label">Projeto em Destaque</p>
+              <h3 class="featured-title">StartInk</h3>
+              <div class="featured-description">
+                <p>
+                  O site Startink é uma empresa brasileira especializada no fornecimento de soluções tecnológicas e insumos para os setores de comunicação visual e têxtil. Seu objetivo é oferecer produtos de alta qualidade que atendam às necessidades desses mercados, promovendo eficiência operacional e crescimento sustentável para seus clientes.
+                </p>
+              </div>
+              <ul class="featured-tech">
+                <li>React</li>
+                <li>Bootstrap</li>
+                <li>Express</li>
+                <li>MySQL</li>
+              </ul>
+              <div class="featured-links">
+                <a
+                  href="https://startink.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Live Demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Projects -->
+        <h3
+          class="section-title"
+          data-aos="fade-up"
+          style="font-size: 1.5rem; margin-top: 4rem"
+        >
+          Outros Projetos
+        </h3>
+        <div class="projects-grid">
+          <div class="project-card" data-aos="fade-up">
+            <div class="project-top">
+              <i class="folder-icon far fa-folder-open"></i>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DaniloAlves1902/TodoListAPI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">API de Gerenciamento de Tarefas</h3>
+            <p class="project-description">
+              API RESTful de todo list em Spring Boot, com sistema de
+              prioridades e ordenação alfabética, permitindo adicionar, editar e
+              remover tarefas de forma prática e organizada.
+            </p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Spring Boot</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-top">
+              <i class="folder-icon far fa-folder-open"></i>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DaniloAlves1902/ecommerce-simplificado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Ecommerce Simplificado</h3>
+            <p class="project-description">
+              CRUD completo para usuários e posteriormente outras funcionalidades seram 
+              adicionadas.
+            </p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-top">
+              <i class="folder-icon far fa-folder-open"></i>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DaniloAlves1902/picpaysimplificado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">PicPay Simplificado</h3>
+            <p class="project-description">
+              Simula o Banco digital PicPay, algumas funções do sistema:
+              transações, depositos e saques.
+            </p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>SpringBoot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact" data-aos="fade-up">
+          <p class="contact-title">E aí?</p>
+          <h2>Entre em Contato</h2>
+          <p class="contact-text">
+            Estou sempre em busca de novos desafios e oportunidades. Se você tem
+            um projeto interessante, uma vaga de emprego ou apenas quer bater um
+            papo, sinta-se à vontade para entrar em contato comigo!
+          </p>
+          <a href="https://www.linkedin.com/in/danilo-de-figueiredo-alves-103262327/" target="_blank" class="cta-button">Diga Olá</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a
+            href="https://github.com/DaniloAlves1902"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/danilo-de-figueiredo-alves-103262327/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/_.danilin_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <p class="copyright">
+          © 2025 Danilo Alves. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
