@@ -135,7 +135,7 @@ nav a:hover::before {
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--light);
     font-weight: 800;
     margin-bottom: 1rem;
@@ -492,6 +492,8 @@ footer {
     flex-wrap: wrap;
 }
 
+
+
 .social-links a {
     color: var(--text);
     font-size: 1.3rem;
@@ -523,6 +525,7 @@ footer {
     opacity: 0;
     transform: translateY(20px);
 }
+
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
