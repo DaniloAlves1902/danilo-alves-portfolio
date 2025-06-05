@@ -777,10 +777,33 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Accessibility improvements */
+/* Accessibility improvements - Foco mais sutil */
 :focus {
-    outline: 2px dashed var(--secondary);
-    outline-offset: 3px;
+    outline: none;
+}
+
+/* Foco apenas para navegação por teclado */
+:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Remover foco visual para links e botões clicados com mouse */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+.cta-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Foco suave para elementos interativos importantes */
+a:focus-visible,
+button:focus-visible,
+.cta-button:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+    border-radius: 2px;
+    transition: outline 0.2s ease;
 }
 
 /* Print styles */
