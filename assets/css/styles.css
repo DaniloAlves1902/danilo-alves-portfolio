@@ -820,3 +820,166 @@ button:focus-visible,
         display: none;
     }
 }
+
+/* Planos e Serviços */
+#planos {
+  background-color: var(--primary);
+  padding: 5rem 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.plan-card {
+  background-color: var(--dark);
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+  border-color: var(--secondary);
+}
+
+.plan-card.featured {
+  border: 2px solid var(--secondary);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.plan-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+}
+
+.plan-price {
+  margin: 1rem 0;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: var(--text);
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.discounted-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.plan-discount {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-family: monospace;
+}
+
+.plan-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.plan-features li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.plan-features li:before {
+  content: "▹";
+  color: var(--secondary);
+  position: absolute;
+  left: 0;
+}
+
+.plan-footer {
+  text-align: center;
+}
+
+.plan-note {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-family: monospace;
+}
+
+.plan-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.plan-button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-3px);
+}
+
+.plans-note {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+@media (max-width: 768px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plan-card {
+    padding: 1.5rem;
+  }
+  
+  #planos {
+    padding: 3rem 0;
+  }
+}
