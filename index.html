@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danilo Alves | Desenvolvedor Full-Stack</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
+    <!-- Font Awesome e AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- ATENÇÃO: Verifique se este caminho para o seu CSS está correto -->
     <link rel="stylesheet" href="/assets/css/styles.css" />
-
     <link rel="icon" href="/img/MY ICON.png" />
-  </head>
-  <body>
+
+    <style>
+        /* Estilos adicionados para o seletor de idioma */
+        .lang-switcher a {
+            padding: 0.2rem 0.5rem;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .lang-switcher a.active {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        .lang-switcher a:not(.active):hover {
+            color: var(--secondary);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
     <!-- Loading Screen -->
     <div class="loading-screen">
       <div class="loader"></div>
@@ -25,16 +40,21 @@
     <!-- Header -->
     <header id="header">
       <div class="container header-container">
-        <a href="#header" class="logo">DA</a>
+        <a href="#home" class="logo">DA</a>
         <button class="hamburger" id="menu-btn">
           <i class="fas fa-bars"></i>
         </button>
         <nav id="nav">
           <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#planos">Planos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#sobre"><span class="lang-pt">Sobre</span><span class="lang-en hidden">About</span></a></li>
+            <li><a href="#projetos"><span class="lang-pt">Projetos</span><span class="lang-en hidden">Projects</span></a></li>
+            <li><a href="curriculo.html"><span class="lang-pt">Currículo</span><span class="lang-en hidden">Resume</span></a></li>
+            <li><a href="#planos"><span class="lang-pt">Planos</span><span class="lang-en hidden">Plans</span></a></li>
+            <li><a href="#contato"><span class="lang-pt">Contato</span><span class="lang-en hidden">Contact</span></a></li>
+            <li class="lang-switcher flex gap-2 ml-4">
+                <a href="#" onclick="switchLanguage('pt'); return false;" id="btn-pt" class="active">PT</a>
+                <a href="#" onclick="switchLanguage('en'); return false;" id="btn-en">EN</a>
+            </li>
           </ul>
         </nav>
         <div class="overlay" id="overlay"></div>
@@ -45,17 +65,23 @@
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
-          <p class="hero-greeting fade-up">Olá, meu nome é</p>
-          <h1 class="hero-title fade-up">Danilo de Figueiredo Alves.</h1>
-          <h2 class="hero-subtitle fade-up">Desenvolvedor FullStack.</h2>
-          <p class="hero-description fade-up">
-            Especializado em criar aplicações web de alta qualidade, utilizando
-            tecnologias como Java, Node.js, React e muito mais. Transformando
-            ideias em produtos excepcionais.
+          <p class="hero-greeting fade-up">
+            <span class="lang-pt">Olá, meu nome é</span>
+            <span class="lang-en hidden">Hello, my name is</span>
           </p>
-          <a href="#projetos" class="cta-button fade-up"
-            >Conheça meu trabalho</a
-          >
+          <h1 class="hero-title fade-up">Danilo de Figueiredo Alves.</h1>
+          <h2 class="hero-subtitle fade-up">
+            <span class="lang-pt">Desenvolvedor FullStack.</span>
+            <span class="lang-en hidden">I'm a Full-Stack Developer.</span>
+          </h2>
+          <p class="hero-description fade-up">
+            <span class="lang-pt">Especializado em criar aplicações web de alta qualidade, utilizando tecnologias como Java, Node.js, React e muito mais. Transformando ideias em produtos excepcionais.</span>
+            <span class="lang-en hidden">Specialized in creating high-quality web applications using technologies like Java, Node.js, React, and more. Turning ideas into exceptional products.</span>
+          </p>
+          <a href="#projetos" class="cta-button fade-up">
+            <span class="lang-pt">Conheça meu trabalho</span>
+            <span class="lang-en hidden">Check out my work</span>
+          </a>
         </div>
       </div>
     </section>
@@ -63,47 +89,34 @@
     <!-- About Section -->
     <section class="section" id="sobre">
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Sobre mim</h2>
+        <h2 class="section-title" data-aos="fade-up">
+            <span class="lang-pt">Sobre mim</span>
+            <span class="lang-en hidden">About Me</span>
+        </h2>
         <div class="about-content">
           <div class="about-text" data-aos="fade-up">
             <p>
-              Olá! Sou Danilo, um desenvolvedor fullstack apaixonado por criar
-              soluções tecnológicas eficientes e visualmente atraentes. Minha
-              jornada na programação começou há alguns anos e desde então venho
-              aprimorando minhas habilidades para entregar produtos de
-              qualidade.
+              <span class="lang-pt">Olá! Sou Danilo, um desenvolvedor fullstack apaixonado por criar soluções tecnológicas eficientes e visualmente atraentes. Minha jornada na programação começou há alguns anos e desde então venho aprimorando minhas habilidades para entregar produtos de qualidade.</span>
+              <span class="lang-en hidden">Hello! I'm Danilo, a full-stack developer passionate about creating efficient and visually appealing technological solutions. My journey in programming began a few years ago, and I have been honing my skills to deliver quality products ever since.</span>
             </p>
             <p>
-              Trabalho com uma variedade de tecnologias, mas meu foco principal
-              está em <strong>Java</strong>, <strong>Node.js</strong>,
-              <strong>React</strong> e todo o ecossistema ao redor dessas
-              ferramentas. Essa combinação me permite desenvolver aplicações
-              robustas, escaláveis e com excelente experiência de usuário.
+              <span class="lang-pt">Trabalho com uma variedade de tecnologias, mas meu foco principal está em <strong>Java</strong>, <strong>Node.js</strong>, <strong>React</strong> e todo o ecossistema ao redor dessas ferramentas. Essa combinação me permite desenvolver aplicações robustas, escaláveis e com excelente experiência de usuário.</span>
+              <span class="lang-en hidden">I work with a variety of technologies, but my main focus is on <strong>Java</strong>, <strong>Node.js</strong>, <strong>React</strong>, and the entire ecosystem around these tools. This combination allows me to develop robust, scalable applications with an excellent user experience.</span>
             </p>
             <p>
-              Tenho orgulho de ter desenvolvido projetos como
-              <strong>Startink</strong> e <strong>TrêsD Online</strong>, que
-              demonstram minha capacidade de criar soluções completas, do
-              backend ao frontend.
+              <span class="lang-pt">Tenho orgulho de ter desenvolvido projetos como <strong>Startink</strong> e <strong>TrêsD Online</strong>, que demonstram minha capacidade de criar soluções completas, do backend ao frontend.</span>
+              <span class="lang-en hidden">I am proud to have developed projects like <strong>Startink</strong> and <strong>TrêsD Online</strong>, which demonstrate my ability to create complete solutions, from backend to frontend.</span>
             </p>
-            <p>Algumas tecnologias com as quais trabalho atualmente:</p>
+            <p>
+                <span class="lang-pt">Algumas tecnologias com as quais trabalho atualmente:</span>
+                <span class="lang-en hidden">Here are a few technologies I've been working with recently:</span>
+            </p>
             <ul class="skills-list">
-              <li>Java</li>
-              <li>Spring Boot</li>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>React</li>
-              <li>JavaScript</li>
-              <li>HTML & CSS</li>
-              <li>SQL & NoSQL</li>
+              <li>Java</li><li>Spring Boot</li><li>Node.js</li><li>Express</li><li>React</li><li>JavaScript</li><li>HTML & CSS</li><li>SQL & NoSQL</li>
             </ul>
           </div>
           <div class="profile-container" data-aos="fade-up">
-            <img
-              class="profile-img"
-              src="/img/minha foto.jpg"
-              alt="Danilo Alves"
-            />
+            <img class="profile-img" src="/img/minha foto.jpg" alt="Danilo Alves" />
             <div class="profile-border"></div>
           </div>
         </div>
@@ -112,308 +125,221 @@
 
     <!-- Projects Section -->
     <section class="section" id="projetos">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="lang-pt">Meus Projetos</span>
+                <span class="lang-en hidden">My Projects</span>
+            </h2>
 
-        <!-- Featured Projects -->
-        <div class="featured-projects">
-          <div class="featured-project" data-aos="fade-up">
-            <div class="featured-img-container right">
-              <img
-                class="featured-img"
-                src="/img/site tresd.png"
-                alt="Projeto tresd-online"
-              />
+            <!-- Featured Projects -->
+            <div class="featured-projects">
+                <div class="featured-project" data-aos="fade-up">
+                    <div class="featured-img-container right">
+                        <img class="featured-img" src="/img/site tresd.png" alt="Projeto tresd-online" />
+                    </div>
+                    <div class="featured-content left">
+                        <p class="featured-label"><span class="lang-pt">Projeto em Destaque</span><span class="lang-en hidden">Featured Project</span></p>
+                        <h3 class="featured-title">TrêsD Online</h3>
+                        <div class="featured-description">
+                            <p>
+                                <span class="lang-pt">O site TrêsD Online é uma plataforma em desenvolvimento focada em comunicação visual, oferecendo soluções criativas para empresas que buscam destacar sua marca por meio de elementos visuais impactantes.</span>
+                                <span class="lang-en hidden">The TrêsD Online website is a platform under development focused on visual communication, offering creative solutions for companies looking to highlight their brand through impactful visual elements.</span>
+                            </p>
+                        </div>
+                        <ul class="featured-tech"><li>React</li><li>Bootstrap</li><li>Express</li><li>MySQL</li></ul>
+                        <div class="featured-links">
+                            <a href="https://tresdonline.com.br" target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt">
+                                    <p class="link-text" style="display: inline">
+                                        <span class="lang-pt">Clique aqui para conferir</span>
+                                        <span class="lang-en hidden">Click here to check it out</span>
+                                    </p>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-project" data-aos="fade-up">
+                    <div class="featured-img-container">
+                        <img class="featured-img" src="/img/startink.png" alt="Projeto Startink" />
+                    </div>
+                    <div class="featured-content">
+                        <p class="featured-label"><span class="lang-pt">Projeto em Destaque</span><span class="lang-en hidden">Featured Project</span></p>
+                        <h3 class="featured-title">StartInk</h3>
+                        <div class="featured-description">
+                            <p>
+                                <span class="lang-pt">O site Startink é uma empresa brasileira especializada no fornecimento de soluções tecnológicas e insumos para os setores de comunicação visual e têxtil. Seu objetivo é oferecer produtos de alta qualidade que atendam às necessidades desses mercados, promovendo eficiência operacional e crescimento sustentável para seus clientes.</span>
+                                <span class="lang-en hidden">The Startink website is a Brazilian company specializing in providing technological solutions and supplies for the visual communication and textile sectors. Its goal is to offer high-quality products that meet the needs of these markets, promoting operational efficiency and sustainable growth for its clients.</span>
+                            </p>
+                        </div>
+                        <ul class="featured-tech"><li>React</li><li>Bootstrap</li><li>Express</li><li>MySQL</li></ul>
+                        <div class="featured-links">
+                            <a href="https://startink.com.br" target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                                <i class="fas fa-external-link-alt">
+                                    <p class="link-text" style="display: inline">
+                                        <span class="lang-pt">Clique aqui para conferir</span>
+                                        <span class="lang-en hidden">Click here to check it out</span>
+                                    </p>
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="featured-content left">
-              <p class="featured-label">Projeto em Destaque</p>
-              <h3 class="featured-title">TrêsD Online</h3>
-              <div class="featured-description">
-                <p>
-                  O site TrêsD Online é uma plataforma em desenvolvimento focada
-                  em comunicação visual, oferecendo soluções criativas para
-                  empresas que buscam destacar sua marca por meio de elementos
-                  visuais impactantes.
-                </p>
-              </div>
-              <ul class="featured-tech">
-                <li>React</li>
-                <li>Bootstrap</li>
-                <li>Express</li>
-                <li>MySQL</li>
-              </ul>
-              <div class="featured-links">
-                <a
-                  href="https://tresdonline.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Live Demo"
-                >
-                  <i class="fas fa-external-link-alt">
-                    <p class="link-text" style="display: inline">
-                      Clique aqui para conferir
+
+            <!-- Other Projects -->
+            <h3 class="section-title" data-aos="fade-up" style="font-size: 1.5rem; margin-top: 4rem">
+                <span class="lang-pt">Outros Projetos</span>
+                <span class="lang-en hidden">Other Projects</span>
+            </h3>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-top">
+                        <i class="folder-icon far fa-folder-open"></i>
+                        <div class="project-links"><a href="https://github.com/DaniloAlves1902/TodoListAPI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <h3 class="project-title"><span class="lang-pt">API de Gerenciamento de Tarefas</span><span class="lang-en hidden">Task Management API</span></h3>
+                    <p class="project-description">
+                        <span class="lang-pt">API RESTful de todo list em Spring Boot, com sistema de prioridades e ordenação alfabética, permitindo adicionar, editar e remover tarefas de forma prática e organizada.</span>
+                        <span class="lang-en hidden">A RESTful to-do list API in Spring Boot, with a priority system and alphabetical sorting, allowing tasks to be added, edited, and removed in a practical and organized way.</span>
                     </p>
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
+                    <div class="project-tech"><span>Java</span><span>Spring Boot</span></div>
+                </div>
 
-          <div class="featured-project" data-aos="fade-up">
-            <div class="featured-img-container">
-              <img
-                class="featured-img"
-                src="/img/startink.png"
-                alt="Projeto Startink"
-              />
-            </div>
-            <div class="featured-content">
-              <p class="featured-label">Projeto em Destaque</p>
-              <h3 class="featured-title">StartInk</h3>
-              <div class="featured-description">
-                <p>
-                  O site Startink é uma empresa brasileira especializada no
-                  fornecimento de soluções tecnológicas e insumos para os
-                  setores de comunicação visual e têxtil. Seu objetivo é
-                  oferecer produtos de alta qualidade que atendam às
-                  necessidades desses mercados, promovendo eficiência
-                  operacional e crescimento sustentável para seus clientes.
-                </p>
-              </div>
-              <ul class="featured-tech">
-                <li>React</li>
-                <li>Bootstrap</li>
-                <li>Express</li>
-                <li>MySQL</li>
-              </ul>
-              <div class="featured-links">
-                <a
-                  href="https://startink.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Live Demo"
-                >
-                  <i class="fas fa-external-link-alt">
-                    <p class="link-text" style="display: inline">
-                      Clique aqui para conferir
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-top">
+                        <i class="folder-icon far fa-folder-open"></i>
+                        <div class="project-links"><a href="https://github.com/DaniloAlves1902/ecommerce-simplificado" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <h3 class="project-title"><span class="lang-pt">Ecommerce Simplificado</span><span class="lang-en hidden">Simplified Ecommerce</span></h3>
+                    <p class="project-description">
+                        <span class="lang-pt">CRUD completo para usuários e posteriormente outras funcionalidades seram adicionadas.</span>
+                        <span class="lang-en hidden">A complete CRUD for users, with other features to be added later.</span>
                     </p>
-                  </i>
-                </a>
-              </div>
+                    <div class="project-tech"><span>Java</span><span>Spring Boot</span><span>Bootstrap</span></div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-top">
+                        <i class="folder-icon far fa-folder-open"></i>
+                        <div class="project-links"><a href="https://github.com/DaniloAlves1902/picpaysimplificado" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <h3 class="project-title"><span class="lang-pt">PicPay Simplificado</span><span class="lang-en hidden">Simplified PicPay</span></h3>
+                    <p class="project-description">
+                        <span class="lang-pt">Simula o Banco digital PicPay, algumas funções do sistema: transações, depositos e saques.</span>
+                        <span class="lang-en hidden">Simulates the PicPay digital bank, with system functions like transactions, deposits, and withdrawals.</span>
+                    </p>
+                    <div class="project-tech"><span>Java</span><span>SpringBoot</span></div>
+                </div>
             </div>
-          </div>
         </div>
-
-        <!-- Other Projects -->
-        <h3
-          class="section-title"
-          data-aos="fade-up"
-          style="font-size: 1.5rem; margin-top: 4rem"
-        >
-          Outros Projetos
-        </h3>
-        <div class="projects-grid">
-          <div class="project-card" data-aos="fade-up">
-            <div class="project-top">
-              <i class="folder-icon far fa-folder-open"></i>
-              <div class="project-links">
-                <a
-                  href="https://github.com/DaniloAlves1902/TodoListAPI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Repository"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">API de Gerenciamento de Tarefas</h3>
-            <p class="project-description">
-              API RESTful de todo list em Spring Boot, com sistema de
-              prioridades e ordenação alfabética, permitindo adicionar, editar e
-              remover tarefas de forma prática e organizada.
-            </p>
-            <div class="project-tech">
-              <span>Java</span>
-              <span>Spring Boot</span>
-            </div>
-          </div>
-
-          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-top">
-              <i class="folder-icon far fa-folder-open"></i>
-              <div class="project-links">
-                <a
-                  href="https://github.com/DaniloAlves1902/ecommerce-simplificado"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Repository"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">Ecommerce Simplificado</h3>
-            <p class="project-description">
-              CRUD completo para usuários e posteriormente outras
-              funcionalidades seram adicionadas.
-            </p>
-            <div class="project-tech">
-              <span>Java</span>
-              <span>Spring Boot</span>
-              <span>Bootstrap</span>
-            </div>
-          </div>
-
-          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-top">
-              <i class="folder-icon far fa-folder-open"></i>
-              <div class="project-links">
-                <a
-                  href="https://github.com/DaniloAlves1902/picpaysimplificado"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Repository"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-            <h3 class="project-title">PicPay Simplificado</h3>
-            <p class="project-description">
-              Simula o Banco digital PicPay, algumas funções do sistema:
-              transações, depositos e saques.
-            </p>
-            <div class="project-tech">
-              <span>Java</span>
-              <span>SpringBoot</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Services/Plans Section -->
     <section class="section" id="planos">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Planos e Serviços</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Ofereço soluções completas para sua presença online, desde landing
-          pages simples até sites institucionais completos.
-        </p>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span class="lang-pt">Planos e Serviços</span><span class="lang-en hidden">Plans & Services</span></h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <span class="lang-pt">Ofereço soluções completas para sua presença online, desde landing pages simples até sites institucionais completos.</span>
+                <span class="lang-en hidden">I offer complete solutions for your online presence, from simple landing pages to full corporate websites.</span>
+            </p>
 
-        <div class="plans-grid">
-          <!-- Plano 1 -->
-          <div class="plan-card" data-aos="fade-up">
-            <div class="plan-header">
-              <h3 class="plan-title">Landing Page Completa</h3>
-              <div class="plan-price">
-                <span class="original-price">R$ 680,00</span>
-                <span class="discounted-price">R$ 500,00</span>
-              </div>
-              <p class="plan-discount">
-                Desconto de primeira compra: R$ 180,00
-              </p>
-            </div>
-            <div class="plan-features">
-              <ul>
-                <li>Landing page personalizada</li>
-                <li>Botões e formulários de contato</li>
-                <li>Design responsivo (mobile e desktop)</li>
-                <li>Otimização básica para SEO</li>
-                <li>Hospedagem gratuita e vitalícia na Vercel</li>
-                <li>1 ano de pequenas atualizações</li>
-                <li>Entrega em até 7 dias úteis</li>
-              </ul>
-            </div>
-          </div>
+            <div class="plans-grid">
+                <!-- Plano 1 -->
+                <div class="plan-card" data-aos="fade-up">
+                    <div class="plan-header">
+                        <h3 class="plan-title"><span class="lang-pt">Landing Page Completa</span><span class="lang-en hidden">Complete Landing Page</span></h3>
+                        <div class="plan-price"><span class="original-price">R$ 680,00</span><span class="discounted-price">R$ 500,00</span></div>
+                        <p class="plan-discount"><span class="lang-pt">Desconto de primeira compra: R$ 180,00</span><span class="lang-en hidden">First purchase discount: R$ 180,00</span></p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><span class="lang-pt">Landing page personalizada</span><span class="lang-en hidden">Custom landing page</span></li>
+                            <li><span class="lang-pt">Botões e formulários de contato</span><span class="lang-en hidden">Contact buttons and forms</span></li>
+                            <li><span class="lang-pt">Design responsivo (mobile e desktop)</span><span class="lang-en hidden">Responsive design (mobile & desktop)</span></li>
+                            <li><span class="lang-pt">Otimização básica para SEO</span><span class="lang-en hidden">Basic SEO optimization</span></li>
+                            <li><span class="lang-pt">Hospedagem gratuita e vitalícia na Vercel</span><span class="lang-en hidden">Free lifetime hosting on Vercel</span></li>
+                            <li><span class="lang-pt">1 ano de pequenas atualizações</span><span class="lang-en hidden">1 year of minor updates</span></li>
+                            <li><span class="lang-pt">Entrega em até 7 dias úteis</span><span class="lang-en hidden">Delivery within 7 business days</span></li>
+                        </ul>
+                    </div>
+                </div>
 
-          <!-- Plano 2 -->
-          <div
-            class="plan-card featured"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="plan-badge">Mais Popular</div>
-            <div class="plan-header">
-              <h3 class="plan-title">Site Institucional</h3>
-              <div class="plan-price">
-                <span class="original-price">R$ 1.200,00</span>
-                <span class="discounted-price">R$ 900,00</span>
-              </div>
-              <p class="plan-discount">
-                Desconto de primeira compra: R$ 300,00
-              </p>
-            </div>
-            <div class="plan-features">
-              <ul>
-                <li>Até 10 páginas personalizadas</li>
-                <li>Integração com redes sociais</li>
-                <li>Formulários avançados</li>
-                <li>Otimização SEO intermediária</li>
-                <li>Hospedagem tradicional gratuita por 1 ano</li>
-                <li>Domínio .com.br gratuito por 1 ano</li>
-                <li>1 ano de atualizações médias</li>
-                <li>Treinamento básico</li>
-                <li>Entrega em até 15 dias úteis</li>
-              </ul>
-            </div>
-          </div>
+                <!-- Plano 2 -->
+                <div class="plan-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plan-badge"><span class="lang-pt">Mais Popular</span><span class="lang-en hidden">Most Popular</span></div>
+                    <div class="plan-header">
+                        <h3 class="plan-title"><span class="lang-pt">Site Institucional</span><span class="lang-en hidden">Institutional Site</span></h3>
+                        <div class="plan-price"><span class="original-price">R$ 1.200,00</span><span class="discounted-price">R$ 900,00</span></div>
+                        <p class="plan-discount"><span class="lang-pt">Desconto de primeira compra: R$ 300,00</span><span class="lang-en hidden">First purchase discount: R$ 300,00</span></p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><span class="lang-pt">Até 10 páginas personalizadas</span><span class="lang-en hidden">Up to 10 custom pages</span></li>
+                            <li><span class="lang-pt">Integração com redes sociais</span><span class="lang-en hidden">Social media integration</span></li>
+                            <li><span class="lang-pt">Formulários avançados</span><span class="lang-en hidden">Advanced forms</span></li>
+                            <li><span class="lang-pt">Otimização SEO intermediária</span><span class="lang-en hidden">Intermediate SEO optimization</span></li>
+                            <li><span class="lang-pt">Hospedagem tradicional gratuita por 1 ano</span><span class="lang-en hidden">1 year of free traditional hosting</span></li>
+                            <li><span class="lang-pt">Domínio .com.br gratuito por 1 ano</span><span class="lang-en hidden">Free .com.br domain for 1 year</span></li>
+                            <li><span class="lang-pt">1 ano de atualizações médias</span><span class="lang-en hidden">1 year of medium updates</span></li>
+                            <li><span class="lang-pt">Treinamento básico</span><span class="lang-en hidden">Basic training</span></li>
+                            <li><span class="lang-pt">Entrega em até 15 dias úteis</span><span class="lang-en hidden">Delivery within 15 business days</span></li>
+                        </ul>
+                    </div>
+                </div>
 
-          <!-- Plano 3 -->
-          <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="plan-header">
-              <h3 class="plan-title">Site Premium</h3>
-              <div class="plan-price">
-                <span class="original-price">R$ 2.500,00</span>
-                <span class="discounted-price">R$ 2.000,00</span>
-              </div>
-              <p class="plan-discount">
-                Desconto de primeira compra: R$ 500,00
-              </p>
+                <!-- Plano 3 -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="plan-header">
+                        <h3 class="plan-title"><span class="lang-pt">Site Premium</span><span class="lang-en hidden">Premium Site</span></h3>
+                        <div class="plan-price"><span class="original-price">R$ 2.500,00</span><span class="discounted-price">R$ 2.000,00</span></div>
+                        <p class="plan-discount"><span class="lang-pt">Desconto de primeira compra: R$ 500,00</span><span class="lang-en hidden">First purchase discount: R$ 500,00</span></p>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><span class="lang-pt">Até 15 páginas com layout exclusivo</span><span class="lang-en hidden">Up to 15 pages with exclusive layout</span></li>
+                            <li><span class="lang-pt">SEO avançado e performance otimizada</span><span class="lang-en hidden">Advanced SEO and performance optimization</span></li>
+                            <li><span class="lang-pt">Hospedagem tradicional gratuita por 1 ano</span><span class="lang-en hidden">1 year of free traditional hosting</span></li>
+                            <li><span class="lang-pt">Domínio .com.br gratuito por 1 ano</span><span class="lang-en hidden">Free .com.br domain for 1 year</span></li>
+                            <li><span class="lang-pt">1 ano de suporte premium</span><span class="lang-en hidden">1 year of premium support</span></li>
+                            <li><span class="lang-pt">Mudanças parciais de layout inclusas</span><span class="lang-en hidden">Partial layout changes included</span></li>
+                            <li><span class="lang-pt">Adições avançadas inclusas</span><span class="lang-en hidden">Advanced additions included</span></li>
+                            <li><span class="lang-pt">Entrega em até 20 dias úteis</span><span class="lang-en hidden">Delivery within 20 business days</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="plan-features">
-              <ul>
-                <li>Até 15 páginas com layout exclusivo</li>
-                <li>SEO avançado e performance otimizada</li>
-                <li>Hospedagem tradicional gratuita por 1 ano</li>
-                <li>Domínio .com.br gratuito por 1 ano</li>
-                <li>1 ano de suporte premium</li>
-                <li>Mudanças parciais de layout inclusas</li>
-                <li>Adições avançadas inclusas</li>
-                <li>Entrega em até 20 dias úteis</li>
-              </ul>
+
+            <div class="plans-note" data-aos="fade-up">
+                <p>
+                    <span class="lang-pt">Todos os planos incluem suporte técnico e garantia de satisfação. Entre em contato para discutir necessidades específicas ou solicitar um orçamento personalizado.</span>
+                    <span class="lang-en hidden">All plans include technical support and a satisfaction guarantee. Contact me to discuss specific needs or request a custom quote.</span>
+                </p>
             </div>
-          </div>
         </div>
-
-        <div class="plans-note" data-aos="fade-up">
-          <p>
-            Todos os planos incluem suporte técnico e garantia de satisfação.
-            Entre em contato para discutir necessidades específicas ou solicitar
-            um orçamento personalizado.
-          </p>
-        </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section" id="contato">
       <div class="container">
         <div class="contact" data-aos="fade-up">
-          <p class="contact-title">E aí?</p>
-          <h2>Entre em Contato</h2>
-          <p class="contact-text">
-            Estou sempre em busca de novos desafios e oportunidades. Se você tem
-            um projeto interessante, uma vaga de freelancer ou apenas quer bater
-            um papo, sinta-se à vontade para entrar em contato comigo!
+          <p class="contact-title">
+            <span class="lang-pt">E aí?</span>
+            <span class="lang-en hidden">What's Next?</span>
           </p>
-          <a
-            href="https://wa.me/5583998819253"
-            target="_blank"
-            class="cta-button"
-            >Diga Olá</a
-          >
+          <h2>
+            <span class="lang-pt">Entre em Contato</span>
+            <span class="lang-en hidden">Get In Touch</span>
+          </h2>
+          <p class="contact-text">
+            <span class="lang-pt">Estou sempre em busca de novos desafios e oportunidades. Se você tem um projeto interessante, uma vaga de freelancer ou apenas quer bater um papo, sinta-se à vontade para entrar em contato comigo!</span>
+            <span class="lang-en hidden">I'm always looking for new challenges and opportunities. If you have an interesting project, a freelance opening, or just want to chat, feel free to get in touch!</span>
+          </p>
+          <a href="https://wa.me/5583998819253" target="_blank" class="cta-button">
+            <span class="lang-pt">Diga Olá</span>
+            <span class="lang-en hidden">Say Hello</span>
+          </a>
         </div>
       </div>
     </section>
@@ -422,33 +348,13 @@
     <footer>
       <div class="container">
         <div class="social-links">
-          <a
-            href="https://github.com/DaniloAlves1902"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github a-git"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/danilo-de-figueiredo-alves-103262327/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/_.danilin_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+          <a href="https://github.com/DaniloAlves1902" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github a-git"></i></a>
+          <a href="https://www.linkedin.com/in/danilo-de-figueiredo-alves-103262327/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/_.danilin_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
         <p class="copyright">
-          © 2025 Danilo Alves. Todos os direitos reservados.
+          <span class="lang-pt">© 2025 Danilo Alves. Todos os direitos reservados.</span>
+          <span class="lang-en hidden">© 2025 Danilo Alves. All rights reserved.</span>
         </p>
       </div>
     </footer>
@@ -456,6 +362,31 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <!-- ATENÇÃO: Verifique se este caminho para o seu script.js está correto -->
     <script src="/assets/js/script.js"></script>
-  </body>
+    
+    <script>
+        function switchLanguage(lang) {
+            // Esconde todos os elementos de linguagem
+            document.querySelectorAll('.lang-pt, .lang-en').forEach(el => {
+                el.classList.add('hidden');
+            });
+    
+            // Mostra os elementos do idioma selecionado
+            document.querySelectorAll('.lang-' + lang).forEach(el => {
+                el.classList.remove('hidden');
+            });
+    
+            // Atualiza o estado ativo dos botões
+            document.getElementById('btn-pt').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    
+        // Define o idioma inicial ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage('pt');
+        });
+    </script>
+</body>
 </html>
