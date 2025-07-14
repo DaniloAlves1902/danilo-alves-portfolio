@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currículo - Danilo F. Alves</title>
 
-    <!-- Scripts e Fontes -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -66,53 +65,56 @@
         background-color: var(--secondary);
         color: var(--primary);
       }
-      
+
       .hidden {
         display: none;
       }
 
       /* Estilos para a animação de carregamento */
       .loading-screen {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: var(--primary);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 2000;
-          opacity: 1;
-          visibility: visible;
-          /* Transição de fade-out: A visibilidade muda após a opacidade */
-          transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 1;
+        visibility: visible;
+        /* Transição de fade-out: A visibilidade muda após a opacidade */
+        transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
       }
-      
+
       .loader {
-          border: 3px solid var(--primary);
-          border-top: 3px solid var(--secondary);
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          animation: spin 1s linear infinite;
+        border: 3px solid var(--primary);
+        border-top: 3px solid var(--secondary);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
       }
 
       @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
       /* O conteúdo principal começa invisível e entra com fade-in */
       .main-content {
-          opacity: 0;
-          transition: opacity 0.5s ease-in;
-      }
-      
-      body.loaded .main-content {
-          opacity: 1;
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
       }
 
+      body.loaded .main-content {
+        opacity: 1;
+      }
 
       /* Estilos de Impressão (para o PDF) */
       @media print {
@@ -127,8 +129,8 @@
           print-color-adjust: exact;
         }
         .main-content {
-            visibility: visible;
-            opacity: 1;
+          visibility: visible;
+          opacity: 1;
         }
         .resume-wrapper {
           padding: 0;
@@ -144,381 +146,435 @@
     </style>
   </head>
   <body class="resume-wrapper p-4 sm:p-8">
-    
     <div class="loading-screen">
-        <div class="loader"></div>
+      <div class="loader"></div>
+    </div>
+
+    <div>
+      <button onclick="goBack()"
+      class="text-blue-500 hover:underline ">voltar</button>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
     </div>
 
     <div class="main-content">
-        <!-- Início da Seção do Currículo -->
-        <div id="resume-section-danilo">
-          <!-- Container Principal do Currículo -->
+      <div id="resume-section-danilo">
+        <div
+          class="resume-container max-w-4xl mx-auto p-6 sm:p-10 rounded-xl shadow-2xl border border-gray-700"
+        >
           <div
-            class="resume-container max-w-4xl mx-auto p-6 sm:p-10 rounded-xl shadow-2xl border border-gray-700"
+            class="no-print flex flex-wrap justify-end mb-6 gap-4 items-center"
           >
-            <!-- Controles: Seletor de Idioma e Botão de Download -->
-            <div
-              class="no-print flex flex-wrap justify-end mb-6 gap-4 items-center"
-            >
+            <div class="flex-grow"></div>
+
+            <div class="flex gap-2">
               <button
-                onclick="history.back()"
-                class="control-btn flex items-center gap-2 text-sm"
+                onclick="switchLanguage('pt')"
+                id="btn-pt"
+                class="control-btn active text-sm"
               >
-                <i class="fas fa-arrow-left"></i>
-                <span class="lang-pt">Voltar</span>
-                <span class="lang-en hidden">Back</span>
+                PT
               </button>
-              <div class="flex-grow"></div>
-              <div class="flex gap-2">
-                <button
-                  onclick="switchLanguage('pt')"
-                  id="btn-pt"
-                  class="control-btn active text-sm"
-                >
-                  PT
-                </button>
-                <button
-                  onclick="switchLanguage('en')"
-                  id="btn-en"
-                  class="control-btn text-sm"
-                >
-                  EN
-                </button>
-              </div>
               <button
-                onclick="window.print()"
-                class="control-btn flex items-center gap-2 text-sm"
+                onclick="switchLanguage('en')"
+                id="btn-en"
+                class="control-btn text-sm"
               >
-                <i class="fas fa-download"></i>
-                <span class="lang-pt">Baixar PDF</span>
-                <span class="lang-en hidden">Download PDF</span>
+                EN
               </button>
             </div>
-
-            <!-- Cabeçalho -->
-            <header
-              class="flex flex-col sm:flex-row items-center gap-8 mb-10 border-b pb-8 border-gray-200"
+            <button
+              onclick="window.print()"
+              class="control-btn flex items-center gap-2 text-sm"
             >
-              <img
-                src="/img/minha foto.jpg"
-                alt="Foto de Danilo Alves"
-                class="w-36 h-36 rounded-full object-cover border-4 border-blue-500 shadow-md"
-                onerror="this.src='https://placehold.co/150x150/E2E8F0/4A5568?text=DA'; this.onerror=null;"
-              />
-              <div class="text-center sm:text-left">
-                <h1 class="text-4xl font-bold text-gray-800">
-                  Danilo de Figueiredo Alves
-                </h1>
-                <p class="text-xl font-medium text-blue-600 mt-1">
-                  <span class="lang-pt">Desenvolvedor Full-Stack</span>
-                  <span class="lang-en hidden">Full-Stack Developer</span>
-                </p>
-                <div
-                  class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 mt-4 text-sm text-gray-600"
+              <i class="fas fa-download"></i>
+              <span class="lang-pt">Baixar PDF</span>
+              <span class="lang-en hidden">Download PDF</span>
+            </button>
+          </div>
+
+          <header
+            class="flex flex-col sm:flex-row items-center gap-8 mb-10 border-b pb-8 border-gray-200"
+          >
+            <img
+              src="./img/minha foto.jpg"
+              alt="Foto de Danilo Alves"
+              class="w-36 h-36 rounded-full object-cover border-4 border-blue-500 shadow-md"
+              onerror="this.src='https://placehold.co/150x150/E2E8F0/4A5568?text=DA'; this.onerror=null;"
+            />
+            <div class="text-center sm:text-left">
+              <h1 class="text-4xl font-bold text-gray-800">
+                Danilo de Figueiredo Alves
+              </h1>
+              <p class="text-xl font-medium text-blue-600 mt-1">
+                <span class="lang-pt"
+                  >Desenvolvedor de Software e Operações de E-commerce</span
                 >
-                  <span class="flex items-center gap-2">
-                    <i class="fas fa-birthday-cake text-blue-500"></i>
-                    <span class="lang-pt">19 anos</span>
-                    <span class="lang-en hidden">19 years old</span>
-                  </span>
-                  <a
-                    href="tel:+5583998819253"
-                    class="flex items-center gap-2 hover:text-blue-600"
-                    ><i class="fas fa-phone text-blue-500"></i>(83) 99881-9253</a
+                <span class="lang-en hidden"
+                  >Software Developer & E-commerce Operations</span
+                >
+              </p>
+              <div
+                class="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 mt-4 text-sm text-gray-600"
+              >
+                <a
+                  href="https://wa.me/+5583998819253"
+                  target="_blank"
+                  class="flex items-center gap-2 hover:text-blue-600"
+                  ><i class="fas fa-phone text-blue-500"></i>(83) 99881-9253</a
+                >
+                <a
+                  href="mailto:danilo.alvess1902@gmail.com"
+                  class="flex items-center gap-2 hover:text-blue-600"
+                  ><i class="fas fa-envelope text-blue-500"></i
+                  >danilo.alvess1902@gmail.com</a
+                >
+              </div>
+              <div
+                class="flex justify-center sm:justify-start items-center gap-2 mt-2 text-sm text-gray-600"
+              >
+                <i class="fas fa-map-marker-alt text-blue-500"></i>
+                <span>Catolé do Rocha / PB, Brasil</span>
+              </div>
+            </div>
+          </header>
+
+          <main class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <aside class="md:col-span-1 flex flex-col gap-8">
+              <div>
+                <h2
+                  class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
+                >
+                  <i class="fas fa-user-tie"></i>
+                  <span class="lang-pt">Perfil</span>
+                  <span class="lang-en hidden">Profile</span>
+                </h2>
+                <p class="text-sm leading-relaxed text-gray-700">
+                  <span class="lang-pt"
+                    >Desenvolvedor de Software e especialista em automação com
+                    +1 anos de experiência na criação de sistemas de ponta a
+                    ponta. Responsável pela arquitetura e desenvolvimento de
+                    soluções de alto impacto, incluindo um sistema de gestão
+                    (ERP) customizado, uma ferramenta de IA para otimização de
+                    vendas em marketplaces e plataformas de gerenciamento de
+                    frotas. Busco aplicar minhas habilidades em desenvolvimento,
+                    análise de dados e operações de e-commerce para criar
+                    soluções que gerem crescimento e eficiência.</span
                   >
-                  <a
-                    href="mailto:danilo.alvess1902@gmail.com"
-                    class="flex items-center gap-2 hover:text-blue-600"
-                    ><i class="fas fa-envelope text-blue-500"></i
-                    >danilo.alvess1902@gmail.com</a
+                  <span class="lang-en hidden"
+                    >Software Developer and automation specialist with 1+ years
+                    of experience creating end-to-end systems. Responsible for
+                    the architecture and development of high-impact solutions,
+                    including a custom management system (ERP), an AI tool for
+                    sales optimization in marketplaces, and fleet management
+                    platforms. I seek to apply my skills in development, data
+                    analysis, and e-commerce operations to create solutions that
+                    drive growth and efficiency.</span
+                  >
+                </p>
+              </div>
+              <div>
+                <h2
+                  class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
+                >
+                  <i class="fas fa-code"></i>
+                  <span class="lang-pt">Habilidades</span>
+                  <span class="lang-en hidden">Skills</span>
+                </h2>
+                <h3 class="font-bold text-md mb-2 text-gray-800">Back-End</h3>
+                <div class="flex flex-wrap gap-2 text-sm mb-4">
+                  <span
+                    class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
+                    >Java</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
+                    >Spring Boot</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
+                    >Node.js</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
+                    >Golang</span
+                  >
+                  <span
+                    class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
+                    >APIs RESTful</span
                   >
                 </div>
-                <div
-                  class="flex justify-center sm:justify-start items-center gap-2 mt-2 text-sm text-gray-600"
-                >
-                  <i class="fas fa-map-marker-alt text-blue-500"></i>
+                <h3 class="font-bold text-md mb-2 text-gray-800">Front-End</h3>
+                <div class="flex flex-wrap gap-2 text-sm mb-4">
                   <span
-                    >Rua Maria das Dores, 108, Luzia Maia - Catolé do Rocha /
-                    PB</span
+                    class="bg-green-100 text-green-800 font-semibold px-3 py-1 rounded-full"
+                    >React</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 font-semibold px-3 py-1 rounded-full"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="bg-green-100 text-green-800 font-semibold px-3 py-1 rounded-full"
+                    >HTML & CSS</span
+                  >
+                </div>
+                <h3 class="font-bold text-md mb-2 text-gray-800">
+                  Banco de Dados e Ferramentas
+                </h3>
+                <div class="flex flex-wrap gap-2 text-sm">
+                  <span
+                    class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
+                    >MySQL</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
+                    >Git & GitHub</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
+                    >Docker</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
+                    >Bling ERP</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
+                    >Marketplaces</span
                   >
                 </div>
               </div>
-            </header>
 
-            <main class="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <!-- Coluna Esquerda -->
-              <aside class="md:col-span-1 flex flex-col gap-8">
-                <div>
-                  <h2
-                    class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
-                  >
-                    <i class="fas fa-user-tie"></i>
-                    <span class="lang-pt">Perfil</span>
-                    <span class="lang-en hidden">Profile</span>
-                  </h2>
-                  <p class="text-sm leading-relaxed text-gray-700">
-                    <span class="lang-pt"
-                      >Desenvolvedor Full-Stack com sólida experiência em Java
-                      (Spring Boot) e Node.js (Express) para backend, e expertise em
-                      HTML, CSS, JavaScript e React para frontend. Hábil na
-                      construção de interfaces responsivas, sistemas escaláveis e
-                      APIs RESTful seguras.</span
+              <div>
+                <h2
+                  class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
+                >
+                  <i class="fas fa-globe-americas"></i>
+                  <span class="lang-pt">Links e Idiomas</span>
+                  <span class="lang-en hidden">Links & Languages</span>
+                </h2>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-center gap-3">
+                    <i class="fab fa-linkedin text-blue-500 fa-lg"></i>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="text-blue-600 hover:underline"
                     >
-                    <span class="lang-en hidden"
-                      >Full-Stack Developer with strong experience in Java (Spring
-                      Boot) and Node.js (Express) for backend, combined with
-                      frontend expertise in HTML, CSS, JavaScript, and React.
-                      Skilled in building responsive interfaces, scalable systems,
-                      and secure RESTful APIs.</span
+                      <span class="lang-pt">LinkedIn</span>
+                      <span class="lang-en hidden">LinkedIn</span>
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <i class="fab fa-github text-blue-500 fa-lg"></i>
+                    <a
+                      href="https://github.com/DaniloAlves1902"
+                      target="_blank"
+                      class="text-blue-600 hover:underline"
                     >
-                  </p>
-                </div>
-                <div>
-                  <h2
-                    class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
-                  >
-                    <i class="fas fa-code"></i>
-                    <span class="lang-pt">Habilidades</span>
-                    <span class="lang-en hidden">Skills</span>
-                  </h2>
-                  <div class="flex flex-wrap gap-2 text-sm">
-                    <span
-                      class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
-                      >Java</span
-                    >
-                    <span
-                      class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
-                      >Spring Boot</span
-                    >
-                    <span
-                      class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
-                      >Node.js</span
-                    >
-                    <span
-                      class="bg-blue-100 text-blue-800 font-semibold px-3 py-1 rounded-full"
-                      >React</span
-                    >
-                    <span
-                      class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
-                      >Backend Development</span
-                    >
-                    <span
-                      class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
-                      >Web Development</span
-                    >
-                    <span
-                      class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
-                      >MySQL</span
-                    >
-                    <span
-                      class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
-                      >PostgreSQL</span
-                    >
-                    <span
-                      class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
-                      >HTML & CSS</span
-                    >
-                    <span
-                      class="bg-gray-200 text-gray-800 font-semibold px-3 py-1 rounded-full"
-                      >JavaScript</span
-                    >
-                  </div>
-                </div>
-                <div>
-                  <h2
-                    class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
-                  >
-                    <i class="fas fa-certificate"></i>
-                    <span class="lang-pt">Cursos</span>
-                    <span class="lang-en hidden">Courses</span>
-                  </h2>
-                  <ul class="space-y-3 text-sm">
-                    <li class="flex items-center gap-3">
-                      <i class="fab fa-java text-blue-500 fa-lg"></i>
-                      <div>
-                        <strong>Java</strong><br /><span class="text-gray-600"
-                          >Udemy (12/2024 - 02/2025)</span
-                        >
-                      </div>
-                    </li>
-                    <li class="flex items-center gap-3">
-                      <i class="fa-solid fa-code text-blue-500"></i>
-                      <div>
-                        <strong>Golang</strong><br /><span class="text-gray-600"
-                          >Udemy (06/2025 - 07/2025)</span
-                        >
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h2
-                    class="text-xl font-bold border-b-2 border-blue-500 pb-2 mb-4 flex items-center gap-2"
-                  >
-                    <i class="fas fa-globe-americas"></i>
-                    <span class="lang-pt">Links e Idiomas</span>
-                    <span class="lang-en hidden">Links & Languages</span>
-                  </h2>
-                  <ul class="space-y-3 text-sm">
-                    <li class="flex items-center gap-3">
-                      <i class="fab fa-github text-blue-500"></i>
-                      <a
-                        href="https://github.com/DaniloAlves1902"
-                        target="_blank"
-                        class="text-blue-600 hover:underline"
+                      <span class="lang-pt">GitHub</span>
+                      <span class="lang-en hidden">GitHub</span>
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <i class="fas fa-language text-blue-500 fa-lg"></i>
+                    <span class="text-gray-700">
+                      <span class="lang-pt"
+                        >Inglês - Leitura Técnica e Intermediária</span
                       >
-                        <span class="lang-pt">GitHub</span>
-                        <span class="lang-en hidden">GitHub</span>
-                      </a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                      <i class="fas fa-language text-blue-500"></i>
-                      <span class="text-gray-700">
-                        <span class="lang-pt">Inglês (Leitura Técnica)</span>
-                        <span class="lang-en hidden"
-                          >English (Technical Reading)</span
-                        >
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </aside>
+                      <span class="lang-en hidden"
+                        >English - Technical & Intermediate Reading</span
+                      >
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </aside>
 
-              <!-- Coluna Direita -->
-              <section class="md:col-span-2">
-                <div>
-                  <h2
-                    class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 flex items-center gap-3"
-                  >
-                    <i class="fas fa-briefcase"></i>
-                    <span class="lang-pt">Experiência Profissional</span>
-                    <span class="lang-en hidden">Professional Experience</span>
-                  </h2>
-                  <div class="space-y-8">
-                    <div class="relative pl-8">
-                      <div
-                        class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
-                      ></div>
-                      <div
-                        class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
-                      ></div>
-                      <p class="font-semibold text-gray-500 text-sm">
-                        03/2025 - <span class="lang-pt">Atual</span
-                        ><span class="lang-en hidden">Present</span>
-                      </p>
-                      <h3 class="text-lg font-bold">
-                        <span class="lang-pt">Desenvolvedor de Software</span>
-                        <span class="lang-en hidden">Software Developer</span>
-                      </h3>
-                      <p class="text-md font-semibold text-blue-700">
-                        TrêsD Comunicação Visual
-                      </p>
-                      <p class="mt-2 text-sm leading-relaxed text-gray-700">
+            <section class="md:col-span-2">
+              <div>
+                <h2
+                  class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 flex items-center gap-3"
+                >
+                  <i class="fas fa-briefcase"></i>
+                  <span class="lang-pt">Experiência Profissional</span>
+                  <span class="lang-en hidden">Professional Experience</span>
+                </h2>
+                <div class="space-y-8">
+                  <div class="relative pl-8">
+                    <div
+                      class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
+                    ></div>
+                    <div
+                      class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
+                    ></div>
+                    <p class="font-semibold text-gray-500 text-sm">
+                      03/2025 - <span class="lang-pt">Atual</span
+                      ><span class="lang-en hidden">Present</span>
+                    </p>
+                    <h3 class="text-lg font-bold">
+                      <span class="lang-pt"
+                        >Desenvolvedor de Software e Operações</span
+                      >
+                      <span class="lang-en hidden"
+                        >Software Developer & Operations</span
+                      >
+                    </h3>
+                    <p class="text-md font-semibold text-blue-700">
+                      TrêsD Comunicação Visual / StartINK Soluções
+                    </p>
+                    <ul
+                      class="mt-2 text-sm leading-relaxed text-gray-700 list-disc list-inside space-y-2"
+                    >
+                      <li>
                         <span class="lang-pt"
-                          >Atuo como Desenvolvedor Full-Stack criando soluções web
-                          para otimizar processos e aumentar a eficiência
-                          operacional. Desenvolvo sistemas customizados, sites
-                          institucionais e implemento automações.</span
+                          >Desenvolvi e implementei um sistema de gestão (ERP)
+                          customizado para controle de estoque e tarefas,
+                          centralizando operações e reduzindo erros manuais em
+                          30%.</span
                         >
                         <span class="lang-en hidden"
-                          >I work as a Full-Stack Developer, creating web solutions
-                          to optimize processes and increase operational efficiency.
-                          I develop custom systems, corporate websites, and
-                          implement automations.</span
+                          >Developed and implemented a custom management system
+                          (ERP) for inventory and task control, centralizing
+                          operations and reducing manual errors by 30%.</span
                         >
-                      </p>
-                    </div>
-                    <div class="relative pl-8">
-                      <div
-                        class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
-                      ></div>
-                      <div
-                        class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
-                      ></div>
-                      <p class="font-semibold text-gray-500 text-sm">
-                        03/2025 - <span class="lang-pt">Atual</span
-                        ><span class="lang-en hidden">Present</span>
-                      </p>
-                      <h3 class="text-lg font-bold">
-                        <span class="lang-pt">Desenvolvedor de Software</span>
-                        <span class="lang-en hidden">Software Developer</span>
-                      </h3>
-                      <p class="text-md font-semibold text-blue-700">
-                        StartINK Soluções
-                      </p>
-                      <p class="mt-2 text-sm leading-relaxed text-gray-700">
+                      </li>
+                      <li>
                         <span class="lang-pt"
-                          >Trabalho como Desenvolvedor Full-Stack criando soluções
-                          web para otimizar processos e aumentar a eficiência
-                          operacional, utilizando tecnologias como Java, Spring
-                          Boot, MySQL, JavaScript, HTML, CSS, e React.</span
+                          >Criei uma ferramenta de Inteligência Artificial para
+                          consultoria de vendas no Mercado Livre, analisando
+                          dados para otimizar precificação e aumentar a
+                          performance dos anúncios.</span
                         >
                         <span class="lang-en hidden"
-                          >Working as a Full-Stack Developer creating web solutions
-                          to optimize processes and increase operational efficiency,
-                          using technologies such as Java, Spring Boot, MySQL,
-                          JavaScript, HTML, CSS, and React.</span
+                          >Created an Artificial Intelligence tool for Mercado
+                          Livre sales consulting, analyzing data to optimize
+                          pricing.</span
                         >
-                      </p>
-                    </div>
+                      </li>
+                      <li>
+                        <span class="lang-pt"
+                          >Fui responsável pela arquitetura e desenvolvimento de
+                          um sistema de gerenciamento de frotas, permitindo
+                          controle logístico e otimização de rotas.</span
+                        >
+                        <span class="lang-en hidden"
+                          >Architected and developed a fleet management system,
+                          enabling logistical control and route
+                          optimization.</span
+                        >
+                      </li>
+                      <li>
+                        <span class="lang-pt"
+                          >Gerenciei as operações de e-commerce em marketplaces
+                          (Mercado Livre, Shopee), utilizando o ERP Bling para
+                          controle de pedidos, resultando em maior conversão de
+                          vendas.</span
+                        >
+                        <span class="lang-en hidden"
+                          >Managed e-commerce operations on marketplaces
+                          (Mercado Livre, Shopee), using the Bling ERP for order
+                          management, resulting in greater sales
+                          conversion.</span
+                        >
+                      </li>
+                      <li>
+                        <span class="lang-pt"
+                          >Automatizei o processo de captura de leads através de
+                          um sistema, contribuindo para o crescimento da base de
+                          clientes.</span
+                        >
+                        <span class="lang-en hidden"
+                          >Automated the lead capture process through a system,
+                          contributing to customer base growth.</span
+                        >
+                      </li>
+                      <li>
+                        <span class="lang-pt"
+                          >Atuei como ponto focal de tecnologia, prestando
+                          suporte técnico e ministrando treinamentos para a
+                          equipe de vendas.</span
+                        >
+                        <span class="lang-en hidden"
+                          >Acted as the central technology point of contact,
+                          providing technical support and conducting training
+                          for the sales team.</span
+                        >
+                      </li>
+                      <li>
+                        <span class="lang-pt"
+                          >Participação excepcional no desenvolvimento dos 2
+                          sites de ambas as empresas.</span
+                        >
+                        <span class="lang-en hidden"
+                          >Exceptional participation in the development of both
+                          companies' 2 websites.</span
+                        >
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
 
-                <div class="mt-12">
-                  <h2
-                    class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 flex items-center gap-3"
-                  >
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="lang-pt">Educação</span>
-                    <span class="lang-en hidden">Education</span>
-                  </h2>
-                  <div class="space-y-8">
-                    <div class="relative pl-8">
-                      <div
-                        class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
-                      ></div>
-                      <div
-                        class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
-                      ></div>
-                      <p class="font-semibold text-gray-500 text-sm">
-                        02/2025 - 08/2027
-                      </p>
-                      <h3 class="text-lg font-bold">
-                        <span class="lang-pt"
-                          >Análise e Desenvolvimento de Sistemas</span
-                        >
-                        <span class="lang-en hidden"
-                          >Analysis and Systems Development</span
-                        >
-                      </h3>
-                      <p class="text-md font-semibold text-blue-700">GRAN</p>
-                    </div>
-                    <div class="relative pl-8">
-                      <div
-                        class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
-                      ></div>
-                      <div
-                        class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
-                      ></div>
-                      <p class="font-semibold text-gray-500 text-sm">
-                        01/2021 - 01/2024
-                      </p>
-                      <h3 class="text-lg font-bold">
-                        <span class="lang-pt">Técnico em Informática</span>
-                        <span class="lang-en hidden">IT Technician</span>
-                      </h3>
-                      <p class="text-md font-semibold text-blue-700">
-                        IFPB - Instituto Federal da Paraíba
-                      </p>
-                    </div>
+              <div class="mt-12">
+                <h2
+                  class="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-6 flex items-center gap-3"
+                >
+                  <i class="fas fa-graduation-cap"></i>
+                  <span class="lang-pt">Educação</span>
+                  <span class="lang-en hidden">Education</span>
+                </h2>
+                <div class="space-y-8">
+                  <div class="relative pl-8">
+                    <div
+                      class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
+                    ></div>
+                    <div
+                      class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
+                    ></div>
+                    <p class="font-semibold text-gray-500 text-sm">
+                      02/2025 - 08/2027
+                    </p>
+                    <h3 class="text-lg font-bold">
+                      <span class="lang-pt"
+                        >Análise e Desenvolvimento de Sistemas</span
+                      >
+                      <span class="lang-en hidden"
+                        >Analysis and Systems Development</span
+                      >
+                    </h3>
+                    <p class="text-md font-semibold text-blue-700">GRAN</p>
+                  </div>
+                  <div class="relative pl-8">
+                    <div
+                      class="absolute left-0 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
+                    ></div>
+                    <div
+                      class="absolute left-[7px] top-1 h-full border-l-2 border-gray-200"
+                      style="height: calc(100% - 1rem)"
+                    ></div>
+                    <p class="font-semibold text-gray-500 text-sm">
+                      01/2021 - 01/2024
+                    </p>
+                    <h3 class="text-lg font-bold">
+                      <span class="lang-pt">Técnico em Informática</span>
+                      <span class="lang-en hidden">IT Technician</span>
+                    </h3>
+                    <p class="text-md font-semibold text-blue-700">
+                      IFPB - Instituto Federal da Paraíba
+                    </p>
                   </div>
                 </div>
-              </section>
-            </main>
-          </div>
+              </div>
+            </section>
+          </main>
         </div>
+      </div>
     </div>
-
 
     <script>
       function switchLanguage(lang) {
@@ -538,21 +594,20 @@
         document.getElementById("btn-" + lang).classList.add("active");
       }
 
-        // Lógica de carregamento da página
-        window.addEventListener('load', () => {
-            const loadingScreen = document.querySelector('.loading-screen');
-            const body = document.querySelector('body');
-            
-            // Inicia o fade-out do loader
-            loadingScreen.style.opacity = '0';
-            loadingScreen.style.visibility = 'hidden';
-            
-            // Espera a transição de fade-out do loader (500ms) para então iniciar o fade-in do conteúdo
-            setTimeout(() => {
-                body.classList.add('loaded');
-            }, 500); // Este atraso deve ser igual à duração da transição da opacidade do loader
-        });
+      // Lógica de carregamento da página
+      window.addEventListener("load", () => {
+        const loadingScreen = document.querySelector(".loading-screen");
+        const body = document.querySelector("body");
 
+        // Inicia o fade-out do loader
+        loadingScreen.style.opacity = "0";
+
+        // Oculta o loader após a transição
+        setTimeout(() => {
+          loadingScreen.style.visibility = "hidden";
+          body.classList.add("loaded");
+        }, 500); // Duração da transição da opacidade
+      });
 
       // Define o idioma inicial ao carregar a página
       document.addEventListener("DOMContentLoaded", () => {
